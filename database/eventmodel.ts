@@ -2,11 +2,12 @@ import { Schema, model, models, Document } from 'mongoose';
 
 // TypeScript interface for Event document
 export interface IEvent extends Document {
+  id: string;
   title: string;
   slug: string;
   description: string;
   overview: string;
-  image: string;
+  // image: string;
   venue: string;
   location: string;
   date: string;
@@ -46,11 +47,11 @@ const EventSchema = new Schema<IEvent>(
       trim: true,
       maxlength: [500, 'Overview cannot exceed 500 characters'],
     },
-    image: {
-      type: String,
-      required: [true, 'Image URL is required'],
-      trim: true,
-    },
+    // image: {
+    //   type: String,
+    //   required: [true, 'Image URL is required'],
+    //   trim: true,
+    // },
     venue: {
       type: String,
       required: [true, 'Venue is required'],
